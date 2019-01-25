@@ -43,6 +43,4 @@ We teach `map`, `filter` and other functional methods during the course so don't
 
 ## Challenges
 
-The steps for completing the final challenges in Section 2 are the same as Section 1. Use what you've learnt about regex and functional programming where you can, but if you can't make it work, don't worry about reverting to methods you do feel comfortable with. And when you're finished...
-
-Once you've completed these problems, <a href='https://us-central1-precourse-pushes.cloudfunctions.net/reviewme/?section=PRE-2' target='_blank'> request a review.</a>
+The steps for completing the final challenges in Section 2 are the same as Section 1. Use what you've learnt about regex and functional programming where you can, but if you can't make it work, don't worry about reverting to methods you do feel comfortable with. And when you're finished, <a href='https://us-central1-precourse-pushes.cloudfunctions.net/reviewme/?section=PRE-2' target='_blank'> request a review.</a>
