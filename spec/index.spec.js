@@ -207,8 +207,10 @@ describe("findPalindromes", () => {
   it("returns [] when passed []", () => {
     expect(findPalindromes([])).to.eql([]);
   });
-  it("identifies a palindrom", () => {
+  it("identifies palindromes", () => {
     expect(findPalindromes(["racecar"])).to.eql(["racecar"]);
+    expect(findPalindromes(["racecar", "kayak"])).to.eql(["racecar", "kayak"]);
+    expect(findPalindromes(["racecar", "racecar"])).to.eql(["racecar", "racecar"]);
   });
   it("ignores non-palindromes", () => {
     expect(findPalindromes(["pineapple", "racecar", "pony"])).to.eql([
