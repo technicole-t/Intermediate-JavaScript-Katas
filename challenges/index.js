@@ -1,42 +1,42 @@
-function getEvenNums(nums) {
+function getEvenNumbers(nums) {
   /*
     This function takes an array of integers and returns an array containing only even integers
     */
 }
 
-function invertBools(bools) {
+function flipBooleans(bools) {
   /*
       This function takes an array of booleans and should return an array of the opposite booleans.
       E.g. [true, true, false] => [false, false, true]
     */
 }
 
-function findFirstAstronaut(people) {
+function findFirstDentist(people) {
   /*
-    This function takes an array of people objects and returns the first found astronaut object from the array.
+    This function takes an array of people objects and returns the first found dentist object from the array.
 
     */
 }
 
-function countPeopleInValencia(people) {
+function tallyPeopleInManchester(people) {
   /* This function receives an array of people objects in for format:
     [
-      { name: 'Sandra', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
+      { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
     ]
 
-    The function should return the count of people who live in the city of Valencia
+    The function should return the number of people who live in the city of Manchester
     */
 }
 
-function getPugNames(dogs) {
+function getPugOwners(dogs) {
   /*
     This function takes an array of dog objects and returns an array of the names of all the pugs.
     E.g. [
-      {name: 'Beatrice', breed: 'Lurcher'},
-      {name: 'Max', breed: 'Pug'},
-      {name: 'Poppy', breed: 'Pug'}
+      {name: 'Beatrice', breed: 'Lurcher', owner: 'Tom'},
+      {name: 'Max', breed: 'Pug', owner: 'Izzi'},
+      {name: 'Poppy', breed: 'Pug', owner: 'Anat'}
     ]
-    will return ['Max', 'Poppy']
+    will return ['Izzi', 'Anat']
     */
 }
 
@@ -47,17 +47,17 @@ function getWordLengths(str) {
   */
 }
 
-function findPalindromes(words) {
+function getPalindromes(words) {
   /*
   This function takes an array of words and returns an array containing only the palindromes.
   A palindrome is a word that is spelled the same way backwards.
-  E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'pineenip'] => ['racecar', 'pineenip']
+  E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] => ['racecar', 'tacocat']
   */
 }
 
-function replaceLettersWithDashes(str) {
-  /* This function will receive a string with a mix of characters. It should return the string with all letters replaced by dashes ('-').
-    For example 'I like Alan' should return '- ---- ----', and 'Easy as 1, 2, 3' should return '---- -- 1, 2, 3'.
+function replaceLettersWithXs(str) {
+  /* This function will receive a string with a mix of characters. It should return the string with all letters replaced by dashes ('X').
+    For example 'I love Greg' should return 'X XXXX XXXX', and 'Hard as 1, 2, 3' should return 'XXXX XX 1, 2, 3'.
     */
 }
 
@@ -82,10 +82,10 @@ function sumDigitsFromString(str) {
   */
 }
 
-function getSmiths(arr) {
+function getWilliams(arr) {
   /*
-  This function takes an array of full names and returns an array containing only the people whose last name is Smith.
-  E.g. ['Charlotte Jones', 'Rebecca Smith', 'Harry Smith', 'John Smithy', 'Smith Jones'] => ['Rebecca Smith', 'Harry Smith']
+  This function takes an array of full names and returns an array containing only the people whose last name is Williams.
+  E.g. ['Charlotte Jones', 'Rebecca Williams', 'Harry Williams', 'John Williamson', 'William Jones'] => ['Rebecca Williams', 'Harry Williams']
   */
 }
 
@@ -122,20 +122,20 @@ function generateMatrix(n) {
 
 }
 
-function findWrongWayAnimal(field) {
+function findWrongWayFruit(orchard) {
 
   /*
-  This array takes an array of animals in the format:
-  ['sheep', 'sheep', 'sheep', 'sheep', 'peehs', 'sheep']
+  This array takes an array of fruit in the format:
+  ['apple', 'apple', 'apple', 'apple', 'elppa', 'apple']
 
-  The animals will all be the 'right way round' apart from 1 animal!
+  The fruit will all be the 'right way round' apart from 1 fruit!
   Your function should return its index position. E.g. in this example, 4.
-  NB The animals will not always be sheep but it will always be a field of the same kind of animal.
+  NB The fruit will not always be apple but it will always be an orchard of the same kind of fruit.
   */
 
 }
 
-function getDNAPairs(dna) {
+function pairDNA(dna) {
   /*
   This function takes a string of DNA such as 'GTCA' and returns an array containing correctly matched DNA pairs.
   E.g. 'GTTC' => ['GC', 'TA', 'TA', 'CG']
@@ -144,7 +144,7 @@ function getDNAPairs(dna) {
   */
 }
 
-function countHashtagsAndMentions(str) {
+function tallyHashtagsAndMentions(str) {
   /* This function receives a string that will contain a number of mentions and hashtags as on Twitter.
 
     E.g. "So excited to start at @northcoders on Monday! #learntocode #codingbootcamp"
@@ -156,21 +156,21 @@ function countHashtagsAndMentions(str) {
 
 // ---------- Do not change the code below this line --------------
 module.exports = {
-  getEvenNums,
-  invertBools,
-  findFirstAstronaut,
-  countPeopleInValencia,
-  getPugNames,
+  getEvenNumbers,
+  flipBooleans,
+  findFirstDentist,
+  tallyPeopleInManchester,
+  getPugOwners,
   getWordLengths,
-  findPalindromes,
-  replaceLettersWithDashes,
+  getPalindromes,
+  replaceLettersWithXs,
   validMobileNumber,
   sumDigitsFromString,
-  getSmiths,
+  getWilliams,
   getFactorials,
   largestNumber,
   generateMatrix,
-  findWrongWayAnimal,
-  getDNAPairs,
-  countHashtagsAndMentions,
+  findWrongWayFruit,
+  pairDNA,
+  tallyHashtagsAndMentions,
 };

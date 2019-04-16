@@ -2,85 +2,85 @@
 /* eslint no-unused-expressions: 0 */
 const { expect } = require("chai");
 const {
-  getEvenNums,
-  invertBools,
-  findFirstAstronaut,
-  countPeopleInValencia,
-  getPugNames,
+  getEvenNumbers,
+  flipBooleans,
+  findFirstDentist,
+  tallyPeopleInManchester,
+  getPugOwners,
   getWordLengths,
-  findPalindromes,
-  replaceLettersWithDashes,
+  getPalindromes,
+  replaceLettersWithXs,
   validMobileNumber,
   sumDigitsFromString,
-  getSmiths,
+  getWilliams,
   getFactorials,
   largestNumber,
   generateMatrix,
-  findWrongWayAnimal,
-  getDNAPairs,
+  findWrongWayFruit,
+  pairDNA,
   countHashtagsAndMentions
 } = require("../challenges");
 
-describe("getEvenNums", () => {
+describe("getEvenNumbers", () => {
   it("returns [] when passed []", () => {
-    expect(getEvenNums([])).to.eql([]);
+    expect(getEvenNumbers([])).to.eql([]);
   });
   it("returns even numbers from a mixed array", () => {
-    expect(getEvenNums([1, 2, 3, 4, 5, 6])).to.eql([2, 4, 6]);
+    expect(getEvenNumbers([1, 2, 3, 4, 5, 6])).to.eql([2, 4, 6]);
   });
   it("returns no numbers when only an odd array is passed", () => {
-    expect(getEvenNums([1, 3, 5, 7, 99])).to.eql([]);
+    expect(getEvenNumbers([1, 3, 5, 7, 99])).to.eql([]);
   });
 });
 
-describe("invertBools", () => {
+describe("flipBooleans", () => {
   it("it returns an empty array when passed []", () => {
-    expect(invertBools([])).to.eql([]);
+    expect(flipBooleans([])).to.eql([]);
   });
   it("inverts all booleans in the array", () => {
-    expect(invertBools([true, true, true])).to.eql([false, false, false]);
-    expect(invertBools([false, true, true])).to.eql([true, false, false]);
-    expect(invertBools([false, false, false])).to.eql([true, true, true]);
+    expect(flipBooleans([true, true, true])).to.eql([false, false, false]);
+    expect(flipBooleans([false, true, true])).to.eql([true, false, false]);
+    expect(flipBooleans([false, false, false])).to.eql([true, true, true]);
   });
 });
 
-describe("findFirstAstronaut", () => {
-  it("returns null if no Astronaut is in the array", () => {
-    expect(findFirstAstronaut([])).to.be.null;
+describe("findFirstDentist", () => {
+  it("returns null if no dentist is in the array", () => {
+    expect(findFirstDentist([])).to.be.null;
   });
 
-  it("returns a person object who is an astronaut", () => {
-    const astronaut = { name: "Tim Peake", isAstronaut: true };
-    expect(findFirstAstronaut([astronaut])).to.have.keys([
+  it("returns a person object who is a dentist", () => {
+    const dentist = { name: "Orin Scrivello", isDentist: true };
+    expect(findFirstDentist([dentist])).to.have.keys([
       "name",
       "isAstronaut"
     ]);
-    expect(findFirstAstronaut([astronaut]).isAstronaut).to.be.true;
+    expect(findFirstDentist([dentist]).isDentist).to.be.true;
   });
 
-  it("returns the first astronaut from the array", () => {
-    const astronauts = [
-      { name: "Johnny Karate", isAstronaut: false },
-      { name: "Neil Armstrong", isAstronaut: true },
-      { name: "Valentina Tereshkova", isAstronaut: true },
-      { name: "Bert Macklin", isAstronaut: false },
-      { name: "Eileen Collins", isAstronaut: true },
-      { name: "Kip Hackman", isAstronaut: false }
+  it("returns the first dentist from the array", () => {
+    const dentists = [
+      { name: "Johnny Karate", isDentist: false },
+      { name: "Lucy Hobbs Taylor", isDentist: true },
+      { name: "Pierre Fauchard", isDentist: true },
+      { name: "Bert Macklin", isDentist: false },
+      { name: "Orin Scrivello", isDentist: true },
+      { name: "Kip Hackman", isDentist: false }
     ];
-    expect(findFirstAstronaut(astronauts)).to.eql({
-      name: "Neil Armstrong",
-      isAstronaut: true
+    expect(findFirstDentist(dentists)).to.eql({
+      name: "Lucy Hobbs Taylor",
+      isDentist: true
     });
   });
 });
 
-describe("countPeopleInValencia", () => {
-  it("returns 0 when nobody is from Valencia", () => {
+describe("tallyPeopleInManchester", () => {
+  it("returns 0 when nobody is from Manchester", () => {
     expect(
-      countPeopleInValencia([
+      tallyPeopleInManchester([
         {
-          name: "Sandra",
-          lives: { country: "UK", city: "Manchester" },
+          name: "Maria",
+          lives: { country: "Italy", city: "Valencia" },
           age: 32
         },
         {
@@ -91,25 +91,25 @@ describe("countPeopleInValencia", () => {
       ])
     ).to.equal(0);
   });
-  it("returns the length of the array when everyone is from Valencia", () => {
+  it("returns the length of the array when everyone is from Manchester", () => {
     expect(
-      countPeopleInValencia([
+      tallyPeopleInManchester([
         {
-          name: "Cassandra",
-          lives: { country: "Spain", city: "Valencia" },
+          name: "Alexis",
+          lives: { country: "England", city: "Manchester" },
           age: 32.5
         },
         {
-          name: "Cassandrella",
-          lives: { country: "Spain", city: "Valencia" },
+          name: "Raheem",
+          lives: { country: "England", city: "Manchester" },
           age: 35.55
         }
       ])
     ).to.equal(2);
   });
-  it("returns the number of people who are actually from the fair city of Valencia", () => {
+  it("returns the number of people who are actually from the proud, yet fairly miserable, city of Manchester", () => {
     expect(
-      countPeopleInValencia([
+      tallyPeopleInManchester([
         {
           name: "Melissandra",
           lives: { country: "Spain", city: "Valencia" },
@@ -121,17 +121,17 @@ describe("countPeopleInValencia", () => {
           age: 55.555
         },
         {
-          name: "Keith",
-          lives: { country: "UK", city: "Newport Pagnell" },
-          age: 2
+          name: "Emmeline",
+          lives: { country: "England", city: "Manchester" },
+          age: 25
         }
       ])
-    ).to.eql(2);
+    ).to.eql(1);
     expect(
-      countPeopleInValencia([
+      tallyPeopleInManchester([
         {
-          name: "Imeldarina",
-          lives: { country: "Spain", city: "Valencia" },
+          name: "Frank",
+          lives: { country: "England", city: "Manchester" },
           age: 15.2
         },
         {
@@ -149,35 +149,35 @@ describe("countPeopleInValencia", () => {
   });
 });
 
-describe("getPugNames", () => {
+describe("getPugOwners", () => {
   it("returns [] when passed []", () => {
-    expect(getPugNames([])).to.eql([]);
+    expect(getPugOwners([])).to.eql([]);
   });
   it("returns an array of pug names when passed an array of dog objects", () => {
     const dogs = [
-      { name: "Beatrice", breed: "Lurcher" },
-      { name: "Max", breed: "Pug" },
-      { name: "Poppy", breed: "Pug" }
+      { name: "Beatrice", breed: "Lurcher", owner: 'Tom' },
+      { name: "Max", breed: "Pug", owner: 'Izzi' },
+      { name: "Poppy", breed: "Pug", owner: 'Anat' }
     ];
-    expect(getPugNames(dogs)).to.eql(["Max", "Poppy"]);
+    expect(getPugOwners(dogs)).to.eql(["Izzi", "Anat"]);
     const dogs2 = [
-      { name: "Steven", breed: "Lurcher" },
-      { name: "Daphne", breed: "Pug" },
-      { name: "Sandy", breed: "Labrador" },
-      { name: "Mike", breed: "Pug" },
-      { name: "Spike", breed: "Pug" }
+      { name: "Steven", breed: "Lurcher", owner: 'Mitch' },
+      { name: "Daphne", breed: "Pug", owner: 'Paul' },
+      { name: "Sandy", breed: "Labrador", owner: 'Paul' },
+      { name: "Mike", breed: "Pug", owner: 'Shaq' },
+      { name: "Spike", breed: "Pug", owner: 'Alex' }
     ];
-    expect(getPugNames(dogs2)).to.eql(["Daphne", "Mike", "Spike"]);
+    expect(getPugOwners(dogs2)).to.eql(["Paul", "Shaq", "Alex"]);
     const dogs3 = [
-      { name: "Kevin", breed: "Labrador" },
-      { name: "Patch", breed: "Rottweiler" },
-      { name: "Miles", breed: "Lurcher" },
-      { name: "Sandy", breed: "Pug" },
-      { name: "Spot", breed: "Pug" },
-      { name: "Josephine", breed: "Terrier" },
-      { name: "Eric", breed: "Pug" }
+      { name: "Kevin", breed: "Labrador", owner: 'Sam' },
+      { name: "Patch", breed: "Rottweiler", owner: 'Ant' },
+      { name: "Miles", breed: "Lurcher", owner: 'Nicki' },
+      { name: "Sandy", breed: "Pug", owner: 'Vel' },
+      { name: "Spot", breed: "Pug", owner: 'Haz' },
+      { name: "Josephine", breed: "Terrier", owner: 'Jonny' },
+      { name: "Eric", breed: "Pug", owner: 'David' }
     ];
-    expect(getPugNames(dogs3)).to.eql(["Sandy", "Spot", "Eric"]);
+    expect(getPugOwners(dogs3)).to.eql(["Vel", "Haz", "David"]);
   });
 });
 
@@ -203,36 +203,36 @@ describe("getWordLengths", () => {
   });
 });
 
-describe("findPalindromes", () => {
+describe("getPalindromes", () => {
   it("returns [] when passed []", () => {
-    expect(findPalindromes([])).to.eql([]);
+    expect(getPalindromes([])).to.eql([]);
   });
   it("identifies palindromes", () => {
-    expect(findPalindromes(["racecar"])).to.eql(["racecar"]);
-    expect(findPalindromes(["racecar", "kayak"])).to.eql(["racecar", "kayak"]);
-    expect(findPalindromes(["racecar", "racecar"])).to.eql(["racecar", "racecar"]);
+    expect(getPalindromes(["racecar"])).to.eql(["racecar"]);
+    expect(getPalindromes(["racecar", "racecar"])).to.eql(["racecar", "racecar"]);
   });
   it("ignores non-palindromes", () => {
-    expect(findPalindromes(["pineapple", "racecar", "pony"])).to.eql([
+    expect(getPalindromes(["racecar", "kayak", "tacocat"])).to.eql(["racecar", "kayak", "tacocat"]);
+    expect(getPalindromes(["pineapple", "pony", "racecar"])).to.eql([
       "racecar"
     ]);
   });
   it("returns [] when passed no palindromes", () => {
-    expect(findPalindromes(["pineapple", "watermelon", "pony"])).to.eql([]);
+    expect(getPalindromes(["pineapple", "watermelon", "pony"])).to.eql([]);
   });
 });
 
-describe("replaceLettersWithDashes", () => {
-  it("replaces a single letter with a dash", () => {
-    expect(replaceLettersWithDashes("Z")).to.equal("-");
+describe("replaceLettersWithXs", () => {
+  it("replaces a single letter with a X", () => {
+    expect(replaceLettersWithXs("Z")).to.equal("X");
   });
   it("does not replace a non-letter character", () => {
-    expect(replaceLettersWithDashes("~")).to.equal("~");
-    expect(replaceLettersWithDashes("-")).to.equal("-");
+    expect(replaceLettersWithXs("~")).to.equal("~");
+    expect(replaceLettersWithXs("-")).to.equal("-");
   });
-  it("replaces sentences with dashes as appropriate", () => {
-    expect(replaceLettersWithDashes("I like Alan")).to.equal("- ---- ----");
-    expect(replaceLettersWithDashes("Don't you?")).to.equal("---'- ---?");
+  it("replaces sentences with Xs as appropriate", () => {
+    expect(replaceLettersWithXs("I like Alan")).to.equal("X XXXX XXXX");
+    expect(replaceLettersWithXs("Don't you?")).to.equal("XXX'X XXX?");
   });
 });
 
@@ -283,25 +283,25 @@ describe("sumDigitsFromString", () => {
   });
 });
 
-describe("getSmiths", () => {
+describe("getWilliams", () => {
   it("returns [] when passed []", () => {
-    expect(getSmiths([])).to.eql([]);
+    expect(getWilliams([])).to.eql([]);
   });
-  it("returns a Smith from a mixed arrau", () => {
-    expect(getSmiths(["Harry Smith", "Charlotte Bank"])).to.eql([
-      "Harry Smith"
+  it("returns a William from a mixed array", () => {
+    expect(getWilliams(["Harry William", "Charlotte Bank"])).to.eql([
+      "Harry William"
     ]);
   });
-  it("returns multiple Smiths from a mixed array", () => {
-    expect(getSmiths(["Harry Smith", "Charlotte Bank"])).to.eql([
-      "Harry Smith"
+  it("returns multiple Williams from a mixed array", () => {
+    expect(getWilliams(["Harry William", "Charlotte Bank"])).to.eql([
+      "Harry William"
     ]);
   });
-  it("ignores Smiths found in first names", () => {
-    expect(getSmiths(["Smithy Jones", "Harry Smith"])).to.eql(["Harry Smith"]);
+  it("ignores Williams found in first names", () => {
+    expect(getWilliams(["William Jones", "Harry William"])).to.eql(["Harry William"]);
   });
-  it("ignores Smiths found in extended last names", () => {
-    expect(getSmiths(["John Smith", "Chris Smithy"])).to.eql(["John Smith"]);
+  it("ignores Williams found in extended last names", () => {
+    expect(getWilliams(["John William", "Chris Williamson"])).to.eql(["John William"]);
   });
 });
 
@@ -370,74 +370,74 @@ describe("generateMatrix", () => {
   });
 });
 
-describe("findWrongAnimal", () => {
+describe("findWrongWayFruit", () => {
   it("returns 0 when passed an array length smaller than 3", () => {
-    expect(findWrongWayAnimal(["sheep"])).to.equal(0);
-    expect(findWrongWayAnimal(["peehs", "sheep"])).to.equal(0);
+    expect(findWrongWayFruit(["apple"])).to.equal(0);
+    expect(findWrongWayFruit(["elppa", "apple"])).to.equal(0);
   });
-  it("returns the correct index when the wrong-way animal is in the middle of the array", () => {
+  it("returns the correct index when the wrong-way fruit is in the middle of the array", () => {
     expect(
-      findWrongWayAnimal(["sheep", "sheep", "sheep", "sheep", "peehs", "sheep"])
+      findWrongWayFruit(["apple", "apple", "apple", "apple", "elppa", "apple"])
     ).to.equal(4);
   });
-  it("returns the correct index when the wrong-way animal is at start", () => {
+  it("returns the correct index when the wrong-way fruit is at start", () => {
     expect(
-      findWrongWayAnimal(["peehs", "sheep", "sheep", "sheep", "sheep", "sheep"])
+      findWrongWayFruit(["elppa", "apple", "apple", "apple", "apple", "apple"])
     ).to.equal(0);
   });
-  it("returns the correct index when the wrong-way animal is at the end", () => {
+  it("returns the correct index when the wrong-way fruit is at the end", () => {
     expect(
-      findWrongWayAnimal(["sheep", "sheep", "sheep", "sheep", "sheep", "peehs"])
+      findWrongWayFruit(["apple", "apple", "apple", "apple", "apple", "elppa"])
     ).to.equal(5);
   });
-  it("returns the correct index when the wrong-way animal is at any other random position", () => {
+  it("returns the correct index when the wrong-way fruit is at any other random position", () => {
     expect(
-      findWrongWayAnimal(["cat", "cat", "cat", "cat", "cat", "tac"])
+      findWrongWayFruit(["orange", "orange", "orange", "orange", "orange", "egnaro"])
     ).to.equal(5);
     expect(
-      findWrongWayAnimal([
-        "pigeon",
-        "noegip",
-        "pigeon",
-        "pigeon",
-        "pigeon",
-        "pigeon"
+      findWrongWayFruit([
+        "banana",
+        "ananab",
+        "banana",
+        "banana",
+        "banana",
+        "banana"
       ])
     ).to.equal(1);
     expect(
-      findWrongWayAnimal(["tab", "bat", "bat", "bat", "bat", "bat"])
+      findWrongWayFruit(["eparg", "grape", "grape", "grape", "grape", "grape"])
     ).to.equal(0);
     expect(
-      findWrongWayAnimal([
-        "gorilla",
-        "gorilla",
-        "gorilla",
-        "gorilla",
-        "allirog",
-        "gorilla"
+      findWrongWayFruit([
+        "tomato",
+        "tomato",
+        "tomato",
+        "tomato",
+        "otamot",
+        "tomato"
       ])
     ).to.equal(4);
     expect(
-      findWrongWayAnimal(["snail", "snail", "lians", "snail", "snail", "snail"])
+      findWrongWayFruit(["cucumber", "cucumber", "rebmucuc", "cucumber", "cucumber", "cucumber"])
     ).to.equal(2);
   });
 });
 
-describe("getDNAPairs", () => {
+describe("pairDNA", () => {
   it('returns [] when passed ""', () => {
-    expect(getDNAPairs("")).to.eql([]);
+    expect(pairDNA("")).to.eql([]);
   });
   it("returns a single pair in an array when passed one", () => {
-    expect(getDNAPairs("G")).to.eql(["GC"]);
+    expect(pairDNA("G")).to.eql(["GC"]);
   });
   it("returns multiple pairs when passed multiple chars", () => {
-    expect(getDNAPairs("GGC")).to.eql(["GC", "GC", "CG"]);
+    expect(pairDNA("GGC")).to.eql(["GC", "GC", "CG"]);
   });
   it("returns correctly when passed lowercase letters", () => {
-    expect(getDNAPairs("gat")).to.eql(["GC", "AT", "TA"]);
+    expect(pairDNA("gat")).to.eql(["GC", "AT", "TA"]);
   });
   it("ignores invalid chars but still returns valid ones within the string", () => {
-    expect(getDNAPairs("PGYYYHVB")).to.eql(["GC"]);
+    expect(pairDNA("PGYYYHVB")).to.eql(["GC"]);
   });
 });
 
