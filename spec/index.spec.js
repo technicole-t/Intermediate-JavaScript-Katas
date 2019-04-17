@@ -18,7 +18,7 @@ const {
   generateMatrix,
   findWrongWayFruit,
   pairDNA,
-  countHashtagsAndMentions
+  tallyHashtagsAndMentions
 } = require("../challenges");
 
 describe("getEvenNumbers", () => {
@@ -53,7 +53,7 @@ describe("findFirstDentist", () => {
     const dentist = { name: "Orin Scrivello", isDentist: true };
     expect(findFirstDentist([dentist])).to.have.keys([
       "name",
-      "isAstronaut"
+      "isDentist"
     ]);
     expect(findFirstDentist([dentist]).isDentist).to.be.true;
   });
@@ -287,21 +287,22 @@ describe("getWilliams", () => {
   it("returns [] when passed []", () => {
     expect(getWilliams([])).to.eql([]);
   });
-  it("returns a William from a mixed array", () => {
-    expect(getWilliams(["Harry William", "Charlotte Bank"])).to.eql([
-      "Harry William"
+  it("returns a Williams from a mixed array", () => {
+    expect(getWilliams(["Harry Williams", "Charlotte Bank"])).to.eql([
+      "Harry Williams"
     ]);
   });
   it("returns multiple Williams from a mixed array", () => {
-    expect(getWilliams(["Harry William", "Charlotte Bank"])).to.eql([
-      "Harry William"
+    expect(getWilliams(["Harry Williams", "Charlotte Williams"])).to.eql([
+      "Harry Williams", 
+      "Charlotte Williams"
     ]);
   });
   it("ignores Williams found in first names", () => {
-    expect(getWilliams(["William Jones", "Harry William"])).to.eql(["Harry William"]);
+    expect(getWilliams(["William Jones", "Harry Williams"])).to.eql(["Harry Williams"]);
   });
   it("ignores Williams found in extended last names", () => {
-    expect(getWilliams(["John William", "Chris Williamson"])).to.eql(["John William"]);
+    expect(getWilliams(["John Williams", "Chris Williamson"])).to.eql(["John Williams"]);
   });
 });
 
@@ -441,40 +442,40 @@ describe("pairDNA", () => {
   });
 });
 
-describe("countHashtagsAndMentions", () => {
+describe("tallyHashtagsAndMentions", () => {
   it("returns an object", () => {
-    expect(typeof countHashtagsAndMentions("")).to.equal("object");
+    expect(typeof tallyHashtagsAndMentions("")).to.equal("object");
   });
   it("returns {hashtags: 0, mentions: 0} if it finds none", () => {
     expect(
-      countHashtagsAndMentions(
+      tallyHashtagsAndMentions(
         "hello this is a tweet guaranteed to get very little engagement"
       )
     ).to.eql({ hashtags: 0, mentions: 0 });
   });
   it("recognises no mentions", () => {
-    expect(countHashtagsAndMentions("#yolo")).to.eql({
+    expect(tallyHashtagsAndMentions("#yolo")).to.eql({
       hashtags: 1,
       mentions: 0
     });
   });
   it("recognises no hashtags", () => {
-    expect(countHashtagsAndMentions("@yobo")).to.eql({
+    expect(tallyHashtagsAndMentions("@yobo")).to.eql({
       hashtags: 0,
       mentions: 1
     });
   });
   it("finds multiple hashtags and mentions and returns that number", () => {
-    expect(countHashtagsAndMentions("#yolo @bolo #golo")).to.eql({
+    expect(tallyHashtagsAndMentions("#yolo @bolo #golo")).to.eql({
       hashtags: 2,
       mentions: 1
     });
-    expect(countHashtagsAndMentions("@boyo #goyo @loyo #zoyo")).to.eql({
+    expect(tallyHashtagsAndMentions("@boyo #goyo @loyo #zoyo")).to.eql({
       hashtags: 2,
       mentions: 2
     });
     expect(
-      countHashtagsAndMentions(
+      tallyHashtagsAndMentions(
         '"So excited to start at @northcoders on Monday! #learntocode #codingbootcamp"'
       )
     ).to.eql({ hashtags: 2, mentions: 1 });
