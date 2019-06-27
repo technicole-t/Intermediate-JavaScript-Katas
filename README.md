@@ -29,7 +29,7 @@ Finally, play around with writing your own regular expressions in [Regexr](http:
 
 ## Functional Programming
 
-If you're feeling confident with what you've done so far, how about adding a couple of new tools to your toolbelt? `map` and `filter` are methods available on all arrays (like `slice`, `pop` and `push`) and are extremely useful! 
+How about adding a couple of new tools to your toolbelt? `map` and `filter` are methods available on all arrays (like `slice`, `pop` and `push`) and are extremely useful! 
 
 Map allows us to transform elements in an array, and filter allows us to filter down an array based on elements we want to keep or reject.
 
@@ -39,8 +39,6 @@ Firstly, watch [this video](https://www.youtube.com/watch?annotation_id=9a10b561
 
 Then watch [this video](https://www.youtube.com/watch?v=bCqtb-Z5YGQ&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84&index=2) which demonstrates the use of the native map method, another classic example of functional programming.
 
-We teach `map`, `filter` and other functional methods during the course so don't worry if you're not getting them just yet - you'll be able to complete the final challenge without them!
-
 ## Challenges
 
-The steps for completing the final challenges in Section 2 are the same as Section 1. Use what you've learnt about regex and functional programming where you can, but if you can't make it work, don't worry about reverting to methods you do feel comfortable with. Any feeback you received on the previous section should be applied to your solutions. When you're finished, <a href='https://us-central1-precourse-pushes.cloudfunctions.net/reviewme/?section=PRE-2' target='_blank'> request a review.</a>
+The steps for completing the final challenges in Section 2 are the same as Section 1. Use what you've learnt about regex and functional programming where you can, but if you can't make it work, feel free to send us a message on Slack or come along to a drop-in session. Any feeback you received on the previous section should be applied to your solutions. When you're finished, <a href='https://us-central1-precourse-pushes.cloudfunctions.net/reviewme/?section=PRE-2' target='_blank'> request a review.</a>
