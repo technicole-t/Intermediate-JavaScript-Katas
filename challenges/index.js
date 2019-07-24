@@ -30,7 +30,7 @@ function tallyPeopleInManchester(people) {
 
 function getPugOwners(dogs) {
   /*
-    This function takes an array of dog objects and returns an array of the names of all the owners.
+    This function takes an array of dog objects and returns an array of the names of all the pug owners.
     E.g. [
       {name: 'Beatrice', breed: 'Lurcher', owner: 'Tom'},
       {name: 'Max', breed: 'Pug', owner: 'Izzi'},
