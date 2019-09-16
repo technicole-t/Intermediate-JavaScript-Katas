@@ -4,7 +4,7 @@ These are the last tasks you are expected to complete before you start the cours
 
 ## Reading
 
-Take a look at [Kyle Simpson's Up and Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going) book, which is a great intro to JavaScript and gives a thorough overview of the things you should understand at this point. Read the [Preface](https://github.com/getify/You-Dont-Know-JS/blob/master/preface.md), all of [Chapter 1](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md) and [Chapter 2](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md) up until the section on 'Immediately Invoked Function Expressions (IIFEs)'.
+Take a look at [Kyle Simpson's Getting Started](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/getting-started/README.md) book, which is a great intro to JavaScript and gives a thorough overview of the things you should understand at this point. Read the [Preface](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/preface.md), all of [Chapter 1](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/getting-started/ch1.md) and [Chapter 2](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/getting-started/ch2.md) up until the section on 'Immediately Invoked Function Expressions (IIFEs)'.
 
 You may also enjoy reading (or at least beginning!) Paul Ford's excellent article, [What is Code?](http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/)
 
