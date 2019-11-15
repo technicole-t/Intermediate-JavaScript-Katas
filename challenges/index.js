@@ -1,24 +1,36 @@
 function getEvenNumbers(nums) {
-  /*
-    This function takes an array of integers and returns an array containing only even integers
-    */
+  const evenNums = nums.filter (i => i % 2 === 0); 
+  return evenNums;
 }
+  /*  This function takes an array of integers and 
+      returns an array containing only even integers */
 
 function flipBooleans(bools) {
   /*
-      This function takes an array of booleans and should return an array of the opposite booleans.
+      This function takes an array of booleans and should return 
+      an array of the opposite booleans.
       E.g. [true, true, false] => [false, false, true]
     */
 }
 
 function findFirstDentist(people) {
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].isDentist) {
+      return people [i];
+    }
+  }
+      return null;
+}
   /*
-    This function takes an array of people objects and returns the first found dentist object from the array.
+    This function takes an array of people 
+    objects and returns the first found dentist 
+    object from the array.
 
     */
-}
+
 
 function tallyPeopleInManchester(people) {
+
   /* This function receives an array of people objects in for format:
     [
       { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }

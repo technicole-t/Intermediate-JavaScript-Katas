@@ -33,7 +33,7 @@ describe("getEvenNumbers", () => {
   });
 });
 
-describe("flipBooleans", () => {
+xdescribe("flipBooleans", () => {
   it("it returns an empty array when passed []", () => {
     expect(flipBooleans([])).to.eql([]);
   });
@@ -149,7 +149,7 @@ describe("tallyPeopleInManchester", () => {
   });
 });
 
-describe("getPugOwners", () => {
+xdescribe("getPugOwners", () => {
   it("returns [] when passed []", () => {
     expect(getPugOwners([])).to.eql([]);
   });
@@ -181,7 +181,7 @@ describe("getPugOwners", () => {
   });
 });
 
-describe("getWordLengths", () => {
+xdescribe("getWordLengths", () => {
   it("returns [] when passed an empty string", () => {
     expect(getWordLengths("")).to.eql([]);
   });
@@ -203,7 +203,7 @@ describe("getWordLengths", () => {
   });
 });
 
-describe("getPalindromes", () => {
+xdescribe("getPalindromes", () => {
   it("returns [] when passed []", () => {
     expect(getPalindromes([])).to.eql([]);
   });
@@ -222,7 +222,7 @@ describe("getPalindromes", () => {
   });
 });
 
-describe("replaceLettersWithXs", () => {
+xdescribe("replaceLettersWithXs", () => {
   it("replaces a single letter with a X", () => {
     expect(replaceLettersWithXs("Z")).to.equal("X");
   });
@@ -236,7 +236,7 @@ describe("replaceLettersWithXs", () => {
   });
 });
 
-describe("validMobileNumber", () => {
+xdescribe("validMobileNumber", () => {
   it("returns false when passed a string of the wrong length", () => {
     expect(validMobileNumber("123")).to.equal(false);
     expect(validMobileNumber("0750617250638")).to.equal(false);
@@ -271,7 +271,7 @@ describe("validMobileNumber", () => {
   });
 });
 
-describe("sumDigitsFromString", () => {
+xdescribe("sumDigitsFromString", () => {
   it("picks out a digit from a string and returns", () => {
     expect(sumDigitsFromString("foo5foo")).to.equal(5);
   });
@@ -283,7 +283,7 @@ describe("sumDigitsFromString", () => {
   });
 });
 
-describe("getWilliams", () => {
+xdescribe("getWilliams", () => {
   it("returns [] when passed []", () => {
     expect(getWilliams([])).to.eql([]);
   });
@@ -306,7 +306,7 @@ describe("getWilliams", () => {
   });
 });
 
-describe("getFactorials", () => {
+xdescribe("getFactorials", () => {
   it("returns [] when passed []", () => {
     expect(getFactorials([])).to.eql([]);
   });
@@ -321,7 +321,7 @@ describe("getFactorials", () => {
   });
 });
 
-describe("largestNumber", () => {
+xdescribe("largestNumber", () => {
   it("if passed a single-digit number then returns that number", () => {
     expect(largestNumber(9)).to.equal(9);
     expect(largestNumber(0)).to.equal(0);
@@ -355,7 +355,7 @@ describe("largestNumber", () => {
   });
 });
 
-describe("generateMatrix", () => {
+xdescribe("generateMatrix", () => {
   it("returns [[null]] when passed 1", () => {
     expect(generateMatrix(1)).to.eql([[null]]);
   });
@@ -371,7 +371,7 @@ describe("generateMatrix", () => {
   });
 });
 
-describe("findWrongWayFruit", () => {
+xdescribe("findWrongWayFruit", () => {
   it("returns 0 when passed an array length smaller than 3", () => {
     expect(findWrongWayFruit(["apple"])).to.equal(0);
     expect(findWrongWayFruit(["elppa", "apple"])).to.equal(0);
@@ -424,7 +424,7 @@ describe("findWrongWayFruit", () => {
   });
 });
 
-describe("pairDNA", () => {
+xdescribe("pairDNA", () => {
   it('returns [] when passed ""', () => {
     expect(pairDNA("")).to.eql([]);
   });
@@ -442,7 +442,7 @@ describe("pairDNA", () => {
   });
 });
 
-describe("tallyHashtagsAndMentions", () => {
+xdescribe("tallyHashtagsAndMentions", () => {
   it("returns an object", () => {
     expect(typeof tallyHashtagsAndMentions("")).to.equal("object");
   });
