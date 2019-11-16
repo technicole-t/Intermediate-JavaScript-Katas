@@ -33,7 +33,7 @@ describe("getEvenNumbers", () => {
   });
 });
 
-xdescribe("flipBooleans", () => {
+describe("flipBooleans", () => {
   it("it returns an empty array when passed []", () => {
     expect(flipBooleans([])).to.eql([]);
   });
@@ -74,7 +74,7 @@ describe("findFirstDentist", () => {
   });
 });
 
-describe("tallyPeopleInManchester", () => {
+xdescribe("tallyPeopleInManchester", () => {
   it("returns 0 when nobody is from Manchester", () => {
     expect(
       tallyPeopleInManchester([

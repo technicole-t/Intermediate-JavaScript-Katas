@@ -6,12 +6,16 @@ function getEvenNumbers(nums) {
       returns an array containing only even integers */
 
 function flipBooleans(bools) {
+  for (let i = 0; i < bools.length; i++) {
+    bools[i] = !bools[i];
+  }
+  return bools;
+}
   /*
       This function takes an array of booleans and should return 
       an array of the opposite booleans.
       E.g. [true, true, false] => [false, false, true]
     */
-}
 
 function findFirstDentist(people) {
   for (let i = 0; i < people.length; i++) {
@@ -30,17 +34,28 @@ function findFirstDentist(people) {
 
 
 function tallyPeopleInManchester(people) {
+  let count = 0; 
+  for (let i = 0; i < people.length; i++) {
+    // if (people.hasOwnProperty('Manchester'))
+     if (people[i].city === "Manchester") 
+      count ++; 
+    }
+    console.log (count)
+    return count;
+  }
 
   /* This function receives an array of people objects in for format:
-    [
       { name: 'Emmeline', lives: { country: 'UK', city: 'Manchester' }, age: 32 }
-    ]
-
     The function should return the number of people who live in the city of Manchester
     */
-}
+
 
 function getPugOwners(dogs) {
+  let ownerNames = {
+    owner: '',
+  };
+  return ownerNames;
+}
   /*
     This function takes an array of dog objects and returns an array of the names of all the pug owners.
     E.g. [
@@ -50,7 +65,7 @@ function getPugOwners(dogs) {
     ]
     will return ['Izzi', 'Anat']
     */
-}
+
 
 function getWordLengths(str) {
   /*
