@@ -18,12 +18,9 @@ function flipBooleans(bools) {
     */
 
 function findFirstDentist(people) {
-  for (let i = 0; i < people.length; i++) {
-    if (people[i].isDentist) {
-      return people [i];
-    }
-  }
-      return null;
+  let foundADentist = people.find (name => name.isDentist)
+  || null;
+  return foundADentist;
 }
   /*
     This function takes an array of people 
@@ -33,15 +30,14 @@ function findFirstDentist(people) {
     */
 
 
-function tallyPeopleInManchester(people) {
-  let count = 0; 
-  for (let i = 0; i < people.length; i++) {
-    // if (people.hasOwnProperty('Manchester'))
-     if (people[i].city === "Manchester") 
-      count ++; 
+function tallyPeopleInManchester(people) { 
+  let mancPeople = 0; 
+    for (let i = 0; i < people.length; i++){
+      if (people[i].lives.city == 'Manchester'){
+        mancPeople ++;
+      }
     }
-    console.log (count)
-    return count;
+    return mancPeople;
   }
 
   /* This function receives an array of people objects in for format:
@@ -51,10 +47,13 @@ function tallyPeopleInManchester(people) {
 
 
 function getPugOwners(dogs) {
-  let ownerNames = {
-    owner: '',
-  };
-  return ownerNames;
+  let pugOwners = [];
+  for (let i = 0; i < dogs.length; i++) {
+    if (dogs[i].breed == 'Pug'){
+      pugOwners.push(dogs[i].owner)
+    }
+  }
+  return pugOwners;
 }
   /*
     This function takes an array of dog objects and returns an array of the names of all the pug owners.
@@ -68,6 +67,7 @@ function getPugOwners(dogs) {
 
 
 function getWordLengths(str) {
+
   /*
   This function takes a string and returns an array of the lengths of each word in the string.
   E.g. 'pineapple and black bean curry' => [9, 3, 5, 4, 5]

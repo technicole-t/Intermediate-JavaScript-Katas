@@ -74,7 +74,7 @@ describe("findFirstDentist", () => {
   });
 });
 
-xdescribe("tallyPeopleInManchester", () => {
+describe("tallyPeopleInManchester", () => {
   it("returns 0 when nobody is from Manchester", () => {
     expect(
       tallyPeopleInManchester([
@@ -149,7 +149,7 @@ xdescribe("tallyPeopleInManchester", () => {
   });
 });
 
-xdescribe("getPugOwners", () => {
+describe("getPugOwners", () => {
   it("returns [] when passed []", () => {
     expect(getPugOwners([])).to.eql([]);
   });
@@ -181,7 +181,7 @@ xdescribe("getPugOwners", () => {
   });
 });
 
-xdescribe("getWordLengths", () => {
+describe("getWordLengths", () => {
   it("returns [] when passed an empty string", () => {
     expect(getWordLengths("")).to.eql([]);
   });
