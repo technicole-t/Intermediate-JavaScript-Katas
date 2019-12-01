@@ -222,7 +222,7 @@ xdescribe("getPalindromes", () => {
   });
 });
 
-xdescribe("replaceLettersWithXs", () => {
+describe("replaceLettersWithXs", () => {
   it("replaces a single letter with a X", () => {
     expect(replaceLettersWithXs("Z")).to.equal("X");
   });
@@ -236,7 +236,7 @@ xdescribe("replaceLettersWithXs", () => {
   });
 });
 
-xdescribe("validMobileNumber", () => {
+describe("validMobileNumber", () => {
   it("returns false when passed a string of the wrong length", () => {
     expect(validMobileNumber("123")).to.equal(false);
     expect(validMobileNumber("0750617250638")).to.equal(false);
@@ -271,7 +271,7 @@ xdescribe("validMobileNumber", () => {
   });
 });
 
-xdescribe("sumDigitsFromString", () => {
+describe("sumDigitsFromString", () => {
   it("picks out a digit from a string and returns", () => {
     expect(sumDigitsFromString("foo5foo")).to.equal(5);
   });
@@ -283,7 +283,7 @@ xdescribe("sumDigitsFromString", () => {
   });
 });
 
-xdescribe("getWilliams", () => {
+describe("getWilliams", () => {
   it("returns [] when passed []", () => {
     expect(getWilliams([])).to.eql([]);
   });
@@ -321,7 +321,7 @@ xdescribe("getFactorials", () => {
   });
 });
 
-xdescribe("largestNumber", () => {
+describe("largestNumber", () => {
   it("if passed a single-digit number then returns that number", () => {
     expect(largestNumber(9)).to.equal(9);
     expect(largestNumber(0)).to.equal(0);
@@ -355,7 +355,7 @@ xdescribe("largestNumber", () => {
   });
 });
 
-xdescribe("generateMatrix", () => {
+describe("generateMatrix", () => {
   it("returns [[null]] when passed 1", () => {
     expect(generateMatrix(1)).to.eql([[null]]);
   });
@@ -442,7 +442,7 @@ xdescribe("pairDNA", () => {
   });
 });
 
-xdescribe("tallyHashtagsAndMentions", () => {
+describe("tallyHashtagsAndMentions", () => {
   it("returns an object", () => {
     expect(typeof tallyHashtagsAndMentions("")).to.equal("object");
   });
