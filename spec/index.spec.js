@@ -203,7 +203,7 @@ describe("getWordLengths", () => {
   });
 });
 
-xdescribe("getPalindromes", () => {
+describe("getPalindromes", () => {
   it("returns [] when passed []", () => {
     expect(getPalindromes([])).to.eql([]);
   });
@@ -306,7 +306,7 @@ describe("getWilliams", () => {
   });
 });
 
-xdescribe("getFactorials", () => {
+describe("getFactorials", () => {
   it("returns [] when passed []", () => {
     expect(getFactorials([])).to.eql([]);
   });
@@ -371,7 +371,7 @@ describe("generateMatrix", () => {
   });
 });
 
-xdescribe("findWrongWayFruit", () => {
+describe("findWrongWayFruit", () => {
   it("returns 0 when passed an array length smaller than 3", () => {
     expect(findWrongWayFruit(["apple"])).to.equal(0);
     expect(findWrongWayFruit(["elppa", "apple"])).to.equal(0);
@@ -424,7 +424,7 @@ xdescribe("findWrongWayFruit", () => {
   });
 });
 
-xdescribe("pairDNA", () => {
+describe("pairDNA", () => {
   it('returns [] when passed ""', () => {
     expect(pairDNA("")).to.eql([]);
   });

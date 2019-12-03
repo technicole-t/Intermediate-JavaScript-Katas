@@ -74,15 +74,31 @@ function getWordLengths(str) {
   return newLengthArray == 0 ? [] : newLengthArray;
 }
 
-// NOT PASSED 
+// PASSED 
  /*
   This function takes an array of words and returns an array containing only the palindromes.
   A palindrome is a word that is spelled the same way backwards.
   E.g. ['foo', 'racecar', 'pineapple', 'porcupine', 'tacocat'] => ['racecar', 'tacocat']
   */
 function getPalindromes(words) {
-  // SOLUTION NEEDED 
+  let re = /[\W_]/g;
+  let lowRegStr;
+  let reverseStr;
+  let palidromeWords = [];
+  let index = 0;
+  for (var i=0; i<words.length; i++)
+  {
+      lowRegStr = words[i].toLowerCase().replace(re, '');
+      reverseStr = lowRegStr.split('').reverse().join('');
+      if (reverseStr === lowRegStr)
+      {
+          palidromeWords[index]=words[i];
+          index=index+1;
+      }
+  }
+return palidromeWords;
 }
+
 
   // PASSED
    /* This function will receive a string with a mix of characters. It should return the string with all letters replaced by dashes ('X').
@@ -91,6 +107,7 @@ function getPalindromes(words) {
 function replaceLettersWithXs(str) {
   const replacedLetters = str.replace(/[a-z]/ig, 'X');
   console.log(replacedLetters);
+
   return replacedLetters;
 }
 
@@ -140,7 +157,7 @@ function getWilliams(arr) {
   return pplNamedWilliams;
 }
 
-// NOT PASSED 
+// PASSED 
  /*
   This function takes an array of positive integers and returns an array of the factorials of these numbers.
   E.g. [4, 3, 2] => [24, 6, 2]
@@ -150,8 +167,35 @@ function getWilliams(arr) {
   */
 
 function getFactorials(nums) {
-// SOLUTION NEEDED 
+  let factorials =[];
+    for (let index=0; index<nums.length;index++)
+    {
+        if (nums[index] === 0 || nums[index] === 1)
+            { 
+                factorials[index] = 1;
+            }
+        else
+            {
+                    let fact=nums[index];
+                for (let i = fact- 1; i >= 1; i--) {
+                    fact *= i;
+                }
+                factorials[index]=fact;
+            }
+    }
+    return factorials;
 }
+
+var  nums = [4, 3, 2];
+console.log(getFactorials(nums));
+
+// ALSO PASSED TESTS 
+ /* return numbers = Array.from(nums).map(function convertToFactorial (nums) {
+    console.log(numbers);
+    if (nums == 0 || nums == 1) return 1;
+    else return nums * convertToFactorial(nums - 1);
+  }); /* 
+
 
 
 // PASSED 
@@ -189,7 +233,7 @@ function generateMatrix(n) {
   return result;  
 }
 
-// NOT PASSED 
+// PASSED 
   /*
   This array takes an array of fruit in the format:
   ['apple', 'apple', 'apple', 'apple', 'elppa', 'apple']
@@ -199,19 +243,51 @@ function generateMatrix(n) {
   NB The fruit will not always be apple but it will always be an orchard of the same kind of fruit.
   */
 function findWrongWayFruit(orchard) {
- // SOLUTION NEEDED HERE 
+
+  let rightWayRound = orchard[0] === orchard[1] ? orchard[0] : (orchard[0] == orchard[2] ? orchard[0] : orchard[2]);
+  console.log(orchard);
+  
+  return orchard.findIndex(i=>i !== rightWayRound);
 }
 
 
 // NOT PASSED 
 function pairDNA(dna) {
+    // Return each strand as an array of two elements, the original and the pair.
+    let paired = [];
+
+    // Function to check with strand to pair.
+    let search = function(char) {
+        switch (char) {
+            case "A":
+                paired.push("AT");
+                break;
+            case "T":
+                paired.push("TA");
+                break;
+            case "C":
+                paired.push("CG");
+                break;
+            case "G":
+                paired.push("GC");
+                break;
+        }
+    };
+
+    // Loops through the input and pair.
+    for (let i = 0; i < dna.length; i++) {
+        search(dna[i].toUpperCase());
+    }
+
+    return paired;
+}
   /*
   This function takes a string of DNA such as 'GTCA' and returns an array containing correctly matched DNA pairs.
   E.g. 'GTTC' => ['GC', 'TA', 'TA', 'CG']
   If any nonsensical letters are passed as DNA they should be ignored.
   E.g. 'GYTC' => ['GC', 'TA', 'CG']
   */
-}
+
 
 // PASSED 
   /* This function receives a string that will contain a number of mentions and hashtags as on Twitter.
